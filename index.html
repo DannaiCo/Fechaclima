@@ -13,6 +13,15 @@
       height: 100vh;
       background-color: #000;
     }
+	    video#fondo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
     .container {
       position: relative;
       width: 897px;
@@ -45,7 +54,7 @@
       top: 25%;
       left: 71%;
       transform: translate(-50%, -50%);
-      font-size: 25px;
+      font-size: 21px;
       font-family: OpenSans, sans-serif;
       display: flex;
       align-items: center;
@@ -63,12 +72,26 @@
       font-size: 60px;
       font-family: OpenSans, sans-serif;
     }
+	  .bog {
+	  color: white;
+	  position: absolute;
+      top: 72%;
+      left: 72%;
+      transform: translate(-50%, -50%);
+      font-size: 23px;
+      font-family: OpenSans bold;
+	  font-style: bold;
+	  }
   </style>
 </head> 
 <body>
   <div class="container">
     <!-- Background Image -->
-    <img id="backgroundImage" src="../../../Clima/897/CLIMATM.png" alt="Diseño de fondo" class="background" />
+  <!-- <img id="backgroundImage" src="../../../Clima/897/CLIMATM.png" alt="Diseño de fondo" class="background" /> -->
+	  <video autoplay muted loop id="fondo">
+    <source src="CLIMATM.mp4" type="video/mp4" class="background">
+    Tu navegador no soporta el video.
+  </video>
 
     <!-- Real-time clock -->
     <div id="clock" class="time"></div>
@@ -84,6 +107,7 @@
 
     <!-- Weather info -->
     <div id="weather" class="weather"></div>
+	<div id="bog" class="bog"> <b>Bogotá, Colombia</b> </div>
   </div>
 
   <script>
@@ -169,13 +193,11 @@
       const weatherDescription = document.getElementById('weatherDescription');
 
       if (currentHour >= 6 && currentHour < 18) {
-        backgroundImage.src = "CLIMATM.png";
         clock.style.color = "#ffffff";
         date.style.color = "#ffffff";
         weather.style.color = "#ffffff";
         weatherDescription.style.color = "#ffffff";
       } else {
-        backgroundImage.src = "CLIMANOCHE.png";
         clock.style.color = "#ffffff";
         date.style.color = "#ffffff";
         weather.style.color = "#ffffff";

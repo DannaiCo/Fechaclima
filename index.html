@@ -42,6 +42,7 @@
     }
     .date {
       position: absolute;
+	 font-weight: bold;
       top: 69%;
       left: 25%;
       transform: translate(-50%, -50%);
@@ -192,8 +193,8 @@
       const weatherDescription = document.getElementById('weatherDescription');
 
       if (currentHour >= 6 && currentHour < 18) {
-        clock.style.color = "#ffffff";
-        date.style.color = "#ffffff";
+        clock.style.color = "#990000";
+        date.style.color = "#990000";
         weather.style.color = "#ffffff";
         weatherDescription.style.color = "#ffffff";
       } else {
@@ -211,4 +212,3 @@
   </script>
 </body>
 </html>
-
